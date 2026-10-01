@@ -1,0 +1,1462 @@
+<!doctype html><html><head><meta charset=utf8><meta name="robots" content="noindex, nofollow"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Janet Goldblatt Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: same shell as the September audit. Sticky section rail, one panel at a time, Cach colours carry meaning. */
+:root{
+  --paper:#F7F6F3; --card:#FFFFFF; --ink:#16151B; --body:#3A3844; --muted:#75727F;
+  --rule:#E3E0DA; --rule-soft:#EEEBE6;
+  --pink:#FC2F78; --blue:#1C43CA; --orange:#F18D44; --slate:#2B2A33; --grey:#C9C5CF;
+  --orange-ink:#B96A1F; --pink-ink:#D6185F;
+  --tint-blue:rgba(28,67,202,.05); --tint-pink:rgba(252,47,120,.06); --tint-orange:rgba(241,141,68,.09);
+  --shadow:0 1px 2px rgba(20,19,26,.05);
+  --display:"Marcellus",Georgia,"Times New Roman",serif;
+  --text:"Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#131218; --card:#1B1A21; --ink:#F4F2EE; --body:#D3D0D8; --muted:#948FA0;
+    --rule:#2E2C37; --rule-soft:#26242E; --grey:#4A4756; --slate:#8D8A99; --blue:#6F8BFF; --orange-ink:#F18D44; --pink-ink:#FF5C95;
+    --tint-blue:rgba(88,120,255,.10); --tint-pink:rgba(252,47,120,.10); --tint-orange:rgba(241,141,68,.12);
+    --shadow:none; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#131218; --card:#1B1A21; --ink:#F4F2EE; --body:#D3D0D8; --muted:#948FA0;
+  --rule:#2E2C37; --rule-soft:#26242E; --grey:#4A4756; --slate:#8D8A99; --blue:#6F8BFF; --orange-ink:#F18D44; --pink-ink:#FF5C95;
+  --tint-blue:rgba(88,120,255,.10); --tint-pink:rgba(252,47,120,.10); --tint-orange:rgba(241,141,68,.12);
+  --shadow:none; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){ *{transition:none !important; animation:none !important} }
+body{margin:0; background:var(--paper); color:var(--body); font-family:var(--text); font-weight:300; font-size:16.5px; line-height:1.66; -webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--display); font-weight:400; color:var(--ink); line-height:1.2; margin:0; text-wrap:balance}
+p{margin:0 0 1em} p:last-child{margin-bottom:0}
+strong{font-weight:500; color:var(--ink)}
+a{color:var(--blue)}
+ul,ol{margin:0 0 1em; padding-left:20px} li{margin-bottom:6px} li:last-child{margin-bottom:0}
+
+.masthead{border-bottom:1px solid var(--rule)}
+.masthead .in{max-width:1240px; margin:0 auto; padding:16px 36px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+.wordmark{font-family:var(--display); font-size:19px; color:var(--ink); letter-spacing:.02em}
+.wordmark span{color:var(--pink)}
+.masthead .date{font-size:13px; color:var(--muted)}
+
+.shell{max-width:1240px; margin:0 auto; padding:0 36px; display:grid; grid-template-columns:minmax(0,1fr) 216px; gap:60px; align-items:start}
+.shell > main{grid-column:1; grid-row:1; min-width:0}
+.rail{grid-column:2; grid-row:1; position:sticky; top:calc(env(safe-area-inset-top,0px) + 24px); padding-top:44px; max-height:calc(100vh - 40px); overflow-y:auto}
+.rail .rt{font-size:12.5px; color:var(--muted); margin-bottom:12px; padding-left:13px}
+.rail nav{display:flex; flex-direction:column; gap:1px; border-left:1px solid var(--rule)}
+.rail nav button{appearance:none; background:none; border:none; border-left:2px solid transparent; margin-left:-1px; font-family:inherit; font-size:13.5px; font-weight:300; color:var(--muted); text-align:left; padding:6px 10px 6px 13px; cursor:pointer; line-height:1.35; transition:color .15s, border-color .15s}
+.rail nav button:hover{color:var(--ink)}
+.rail nav button.on{color:var(--ink); font-weight:400; border-left-color:var(--pink)}
+.rail nav button:focus-visible{outline:2px solid var(--blue); outline-offset:2px}
+.rail .grp-l{font-size:11px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; padding:14px 0 4px 13px}
+.rail .grp-l:first-child{padding-top:0}
+@media(max-width:940px){
+  .shell{grid-template-columns:1fr; gap:0; padding:0 18px}
+  .shell > main{grid-column:1; grid-row:2}
+  .rail{grid-column:1; grid-row:1; position:sticky; top:env(safe-area-inset-top,0px); z-index:40; padding:0; margin:0 -18px; max-height:none; overflow:visible; background:color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter:blur(12px); border-bottom:1px solid var(--rule)}
+  .rail .rt,.rail .grp-l{display:none}
+  .rail nav{flex-direction:row; border-left:none; overflow-x:auto; scrollbar-width:none; padding:8px 18px; gap:4px}
+  .rail nav::-webkit-scrollbar{display:none}
+  .rail nav button{border-left:none; border-radius:100px; padding:6px 12px; white-space:nowrap; margin-left:0}
+  .rail nav button.on{background:var(--rule-soft)}
+}
+@media(max-width:600px){ body{font-size:16px} .masthead .in{padding:14px 18px} }
+
+.hero{padding:44px 0 34px; border-bottom:1px solid var(--rule); display:flex; align-items:center; gap:22px}
+.hero img{width:78px; height:78px; border-radius:50%; object-fit:cover; flex:none; background:var(--rule-soft)}
+.hero .hn{font-family:var(--display); font-size:26px; color:var(--ink); line-height:1.15}
+.hero .hs{font-size:13.5px; color:var(--muted); margin-top:2px}
+@media(max-width:600px){ .hero{padding:28px 0 22px; gap:16px} .hero img{width:60px; height:60px} .hero .hn{font-size:21px} }
+
+.panel{display:none; padding:44px 0 10px}
+.panel.active{display:block}
+.snum{font-size:13px; color:var(--muted); margin-bottom:10px}
+h2{font-size:clamp(27px,4vw,38px); letter-spacing:-.01em; margin-bottom:16px}
+h3{font-size:21px; margin:40px 0 12px}
+h4{font-size:17px; margin:0 0 6px}
+.intro{max-width:38em; font-size:17px}
+.prose{max-width:40em}
+.note{font-size:14px; color:var(--muted)}
+hr.sep{border:none; border-top:1px solid var(--rule); margin:42px 0}
+
+.nextrow{border-top:1px solid var(--rule); margin-top:56px; padding:26px 0 64px}
+.nextrow button{appearance:none; background:none; border:1px solid var(--rule); border-radius:100px; cursor:pointer; font-family:inherit; font-size:14.5px; color:var(--ink); padding:9px 20px; transition:border-color .15s}
+.nextrow button:hover{border-color:var(--ink)}
+.nextrow button:focus-visible{outline:2px solid var(--blue); outline-offset:2px}
+.nextrow .nl{font-size:12.5px; color:var(--muted); margin-bottom:9px}
+
+.block{margin:22px 0; max-width:42em}
+.tag{display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:500; color:var(--muted); margin-bottom:8px}
+.tag .dot{width:7px; height:7px; border-radius:50%; flex:none; background:currentColor}
+.read{border-left:2px solid var(--blue); background:var(--tint-blue); padding:16px 18px; border-radius:0 8px 8px 0}
+.read .tag{color:var(--blue)}
+.fixnote{border-left:2px solid var(--pink); background:var(--tint-pink); padding:16px 18px; border-radius:0 8px 8px 0}
+.fixnote .tag{color:var(--pink)}
+.decide{border-left:2px solid var(--orange); background:var(--tint-orange); padding:16px 18px; border-radius:0 8px 8px 0}
+.decide .tag{color:var(--orange-ink)}
+
+.northstar{border:1px solid var(--rule); background:var(--card); border-radius:12px; padding:30px; margin:28px 0; box-shadow:var(--shadow)}
+.northstar .ns-l{font-size:12.5px; color:var(--pink); font-weight:500; margin-bottom:10px}
+.northstar .ns-q{font-family:var(--display); font-size:clamp(23px,3.2vw,30px); color:var(--ink); line-height:1.3; max-width:24em}
+.goalrow{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:10px; overflow:hidden; margin:22px 0}
+.goalrow > div{background:var(--card); padding:18px; min-width:0}
+.goalrow .gl{font-size:12.5px; color:var(--muted); margin-bottom:6px}
+.goalrow .gv{font-family:var(--display); font-size:20px; color:var(--ink); line-height:1.25}
+.goalrow .gs{font-size:13.5px; margin-top:6px}
+@media(max-width:760px){ .goalrow{grid-template-columns:1fr} }
+
+/* ecosystem map */
+.eco{display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; margin:26px 0 10px}
+.eco .stage{background:var(--card); border:1px solid var(--rule); border-radius:10px; padding:14px; position:relative; min-width:0}
+.eco .stage h4{font-size:16px}
+.eco .stage .sl{font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:4px}
+.eco .stage ul{list-style:none; padding:0; margin:8px 0 0; font-size:13.5px}
+.eco .stage li{padding:5px 0; border-top:1px solid var(--rule-soft); margin:0}
+.eco .stage .own{font-size:12px; color:var(--muted); margin-top:10px}
+.eco .s1{border-top:3px solid var(--orange)} .eco .s2{border-top:3px solid var(--pink)} .eco .s3{border-top:3px solid var(--blue)} .eco .s4{border-top:3px solid var(--slate)} .eco .s5{border-top:3px solid var(--grey)}
+.eco .stage:not(:last-child)::after{content:""; position:absolute; right:-8px; top:26px; width:6px; height:6px; border-top:1.5px solid var(--muted); border-right:1.5px solid var(--muted); transform:rotate(45deg)}
+@media(max-width:900px){ .eco{grid-template-columns:1fr 1fr} .eco .stage::after{display:none} }
+@media(max-width:520px){ .eco{grid-template-columns:1fr} }
+.loopnote{font-size:13.5px; color:var(--muted); max-width:44em}
+
+/* tables */
+.tw{overflow-x:auto; margin:18px 0; border:1px solid var(--rule); border-radius:10px; background:var(--card)}
+table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:560px}
+th,td{text-align:left; padding:11px 14px; border-bottom:1px solid var(--rule-soft); vertical-align:top}
+th{font-weight:500; color:var(--ink); font-size:13px; background:var(--rule-soft)}
+tr:last-child td{border-bottom:none}
+td.num,th.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+td:first-child{color:var(--ink); font-weight:400}
+
+/* cards */
+.grid2{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:20px 0}
+.grid3{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:20px 0}
+@media(max-width:860px){ .grid3{grid-template-columns:1fr 1fr} }
+@media(max-width:620px){ .grid2,.grid3{grid-template-columns:1fr} }
+.card{background:var(--card); border:1px solid var(--rule); border-radius:10px; padding:18px 20px; min-width:0}
+.card h4{font-size:18px; margin-bottom:8px}
+.card p,.card li{font-size:14.5px}
+.card .k{font-size:12px; color:var(--muted); margin-bottom:4px}
+
+.pill{display:inline-block; font-size:11.5px; color:#fff; padding:2px 9px; border-radius:100px; margin:0 4px 4px 0; font-weight:400}
+.pill.ig{background:var(--pink)} .pill.tt{background:var(--orange)} .pill.fb{background:#1C43CA} .pill.li{background:#2B2A33} .pill.web{background:#75727F}
+
+.pillar{border:1px solid var(--rule); border-radius:12px; background:var(--card); padding:24px; margin:22px 0; box-shadow:var(--shadow)}
+.pillar-head{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; border-bottom:1px solid var(--rule-soft); padding-bottom:14px; margin-bottom:14px}
+.pillar-head h3{margin:0; font-size:24px}
+.pillar-head .share{margin-left:auto; font-size:13px; color:var(--muted)}
+.pillar .job{font-size:14.5px; max-width:44em}
+.ideas{list-style:none; padding:0; margin:14px 0 0; border-top:1px solid var(--rule-soft)}
+.ideas li{display:flex; gap:12px; padding:11px 0; border-bottom:1px solid var(--rule-soft); font-size:15px; margin:0; align-items:flex-start}
+.ideas li:last-child{border-bottom:none}
+.ideas .fmt{font-size:11.5px; color:var(--muted); border:1px solid var(--rule); border-radius:100px; padding:2px 9px; white-space:nowrap; flex:none; margin-top:3px; min-width:74px; text-align:center}
+@media(max-width:520px){ .ideas li{flex-direction:column; gap:4px} }
+
+.plat{border:1px solid var(--rule); border-radius:12px; background:var(--card); padding:26px; margin:26px 0; box-shadow:var(--shadow)}
+.plat-head{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; border-bottom:1px solid var(--rule-soft); padding-bottom:16px; margin-bottom:6px}
+.plat-head h3{margin:0; font-size:26px}
+.role{font-size:12.5px; color:#fff; padding:3px 10px; border-radius:100px}
+.role.ig{background:var(--pink)} .role.fb{background:#1C43CA} .role.li{background:#2B2A33} .role.tt{background:var(--orange)} .role.web{background:#75727F}
+.plat-head .size{font-size:13.5px; color:var(--muted); margin-left:auto}
+@media(max-width:620px){ .plat{padding:20px 16px} .plat-head .size{margin-left:0; width:100%} }
+
+.stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:10px; overflow:hidden; margin:16px 0}
+.stats div{background:var(--card); padding:13px 15px}
+.stats .n{font-family:var(--display); font-size:22px; color:var(--ink); line-height:1.15}
+.stats .l{font-size:12.5px; color:var(--muted); margin-top:3px; line-height:1.4}
+
+details{border-bottom:1px solid var(--rule-soft)}
+details.first,details:first-of-type{border-top:1px solid var(--rule-soft)}
+details summary{cursor:pointer; list-style:none; padding:15px 34px 15px 0; position:relative; font-size:16px; color:var(--ink)}
+details summary::-webkit-details-marker{display:none}
+details summary:focus-visible{outline:2px solid var(--blue); outline-offset:3px; border-radius:3px}
+details summary::after{content:""; position:absolute; right:6px; top:23px; width:8px; height:8px; border-right:1.5px solid var(--muted); border-bottom:1.5px solid var(--muted); transform:rotate(45deg); transition:transform .2s}
+details[open] summary::after{transform:rotate(-135deg); top:26px}
+details .inner{padding:0 0 22px; font-size:15.5px; max-width:44em}
+.acc-lead{font-size:14px; color:var(--muted); margin:28px 0 4px}
+
+/* mock copy */
+.mock{border:1px dashed var(--grey); border-radius:10px; background:var(--paper); margin:14px 0; overflow:hidden}
+.mock-h{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:9px 14px; border-bottom:1px dashed var(--grey); font-size:12.5px; color:var(--muted)}
+.mock-h button{appearance:none; font-family:inherit; font-size:12px; color:var(--ink); background:var(--card); border:1px solid var(--rule); border-radius:100px; padding:3px 12px; cursor:pointer}
+.mock-h button:hover{border-color:var(--ink)}
+.mock-h button:focus-visible{outline:2px solid var(--blue); outline-offset:2px}
+.mock-b{padding:14px 16px; font-size:15px; white-space:pre-line; color:var(--ink); overflow-wrap:anywhere}
+
+.why{font-size:14.5px; background:var(--tint-blue); border-left:2px solid var(--blue); padding:12px 15px; border-radius:0 6px 6px 0; margin:14px 0}
+
+.cadence{display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:6px; margin:18px 0; overflow-x:auto}
+.cadence .d{background:var(--card); border:1px solid var(--rule); border-radius:8px; padding:10px 8px; min-width:86px; font-size:12.5px}
+.cadence .d b{display:block; font-weight:500; color:var(--ink); font-size:13px; margin-bottom:6px}
+.cadence .d span{display:block; margin-bottom:4px; line-height:1.35}
+.wrapx{overflow-x:auto}
+
+.tl{list-style:none; padding:0; margin:20px 0; border-left:1px solid var(--rule)}
+.tl > li{position:relative; padding:0 0 22px 22px; margin:0}
+.tl > li::before{content:""; position:absolute; left:-5px; top:7px; width:9px; height:9px; border-radius:50%; background:var(--card); border:2px solid var(--pink)}
+.tl > li.b::before{border-color:var(--blue)} .tl > li.o::before{border-color:var(--orange)}
+.tl .when{font-size:12.5px; color:var(--muted); font-variant-numeric:tabular-nums}
+.tl h4{margin:2px 0 6px}
+.tl p,.tl li li{font-size:15px}
+
+.fixlist{list-style:none; margin:0; padding:0; border-top:1px solid var(--rule-soft)}
+.fixlist li{border-bottom:1px solid var(--rule-soft); padding:13px 0; display:flex; gap:14px; align-items:flex-start; font-size:15.5px; margin:0}
+.owner{font-size:11.5px; color:var(--muted); border:1px solid var(--rule); border-radius:100px; padding:2px 9px; white-space:nowrap; flex:none; margin-top:3px; min-width:64px; text-align:center}
+@media(max-width:520px){ .fixlist li{flex-direction:column; gap:4px} }
+
+.sources{font-size:13.5px; color:var(--muted)}
+.sources li{margin-bottom:4px}
+footer{border-top:1px solid var(--rule); margin-top:10px}
+footer .in{max-width:1240px; margin:0 auto; padding:30px 36px 60px; font-size:13.5px; color:var(--muted)}
+@media(max-width:600px){ footer .in{padding:26px 18px 50px} }
+
+details.sec{max-width:46em}
+details.sec summary{font-family:var(--display); font-size:19px; padding:16px 34px 16px 20px; display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px}
+details.sec summary::before{content:""; position:absolute; left:2px; top:25px; width:8px; height:8px; border-radius:50%; background:var(--c)}
+details.sec summary::after{top:24px; border-color:var(--c)}
+details.sec[open] summary::after{top:27px}
+details.sec[open] summary{color:var(--c-ink)}
+details .inner.wide{max-width:none}
+.sum-tag{font-family:var(--text); font-size:12.5px; color:var(--muted); font-weight:400}
+.sum-tag.must{color:var(--pink); font-weight:500}
+.plat-sum{font-size:15px; max-width:44em; margin:12px 0 4px}
+.plat details summary{font-size:15.5px}
+.panel > .tw,.panel > .grid2,.panel > .grid3,.panel > .stats{margin-bottom:26px}
+
+/* Cach colour system: each part of the document carries one brand colour */
+.panel[data-g="f"],#nav [data-g="f"]{--c:var(--pink); --c-ink:var(--pink-ink); --ct:var(--tint-pink)}
+.panel[data-g="s"],#nav [data-g="s"]{--c:var(--blue); --c-ink:var(--blue); --ct:var(--tint-blue)}
+.panel[data-g="w"],#nav [data-g="w"]{--c:var(--orange); --c-ink:var(--orange-ink); --ct:var(--tint-orange)}
+.panel[data-g="b"],#nav [data-g="b"]{--c:var(--pink); --c-ink:var(--pink-ink); --ct:var(--tint-pink)}
+.panel[data-g="r"],#nav [data-g="r"]{--c:var(--blue); --c-ink:var(--blue); --ct:var(--tint-blue)}
+.topstripe{display:flex; height:4px}
+.topstripe i{flex:1} .topstripe i:nth-child(1){background:var(--pink)} .topstripe i:nth-child(2){background:var(--orange)} .topstripe i:nth-child(3){background:var(--blue)}
+.mark{height:24px; width:auto; display:block}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .mark{background:#fff; padding:6px 10px; border-radius:6px} }
+:root[data-theme="dark"] .mark{background:#fff; padding:6px 10px; border-radius:6px}
+.rail .grp-l{color:var(--c-ink); font-weight:500}
+.rail nav button.on{border-left-color:var(--c)}
+@media(max-width:940px){ .rail nav button.on{background:var(--ct); color:var(--ink)} }
+.snum{color:var(--c-ink); font-weight:500; letter-spacing:.02em}
+h2{position:relative; padding-bottom:16px}
+h2::after{content:""; position:absolute; left:0; bottom:0; width:56px; height:3px; border-radius:2px; background:var(--c)}
+.panel .card{border-top:3px solid var(--c)}
+th{background:var(--ct)}
+.tw{border-top:3px solid var(--c)}
+.ideas .fmt{border-color:var(--c); color:var(--c-ink)}
+.tl > li::before{border-color:var(--c)}
+.nextrow button:hover{border-color:var(--c); color:var(--c-ink)}
+.stats div{border-top:3px solid var(--c)}
+.owner{border:none; font-weight:500}
+.owner.o-cach{background:var(--tint-pink); color:var(--pink-ink)}
+.owner.o-brett{background:var(--tint-blue); color:var(--blue)}
+.owner.o-jonny{background:var(--tint-orange); color:var(--orange-ink)}
+.owner.o-you{background:var(--rule-soft); color:var(--ink)}
+
+.northstar{position:relative; overflow:hidden; padding:0 30px 30px; border:none; background:var(--card)}
+.ns-stripe{display:flex; height:5px; margin:0 -30px 26px}
+.ns-stripe i{flex:1} .ns-stripe i:nth-child(1){background:var(--pink)} .ns-stripe i:nth-child(2){background:var(--orange)} .ns-stripe i:nth-child(3){background:var(--blue)}
+.northstar .ns-l{color:var(--pink-ink); font-size:13px; letter-spacing:.06em; text-transform:uppercase}
+.northstar .ns-q{font-size:clamp(24px,3.4vw,33px); max-width:26em}
+.ns-steps{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:28px}
+.ns-steps .st{border-top:3px solid var(--pink); padding-top:14px; min-width:0}
+.ns-steps .st2{border-color:var(--orange)} .ns-steps .st3{border-color:var(--blue)}
+.ns-steps .sn{font-family:var(--display); font-size:21px; color:var(--ink); margin-bottom:6px}
+.ns-steps p{font-size:14.5px; margin-bottom:8px}
+.ns-steps .sw{font-size:12px; font-weight:500; color:var(--pink-ink)}
+.ns-steps .st2 .sw{color:var(--orange-ink)} .ns-steps .st3 .sw{color:var(--blue)}
+@media(max-width:700px){ .ns-steps{grid-template-columns:1fr} .northstar{padding:0 20px 24px} .ns-stripe{margin:0 -20px 22px} }
+.origin{border-left:3px solid var(--pink); background:var(--tint-pink); border-radius:0 12px 12px 0; padding:22px 26px; margin:26px 0; max-width:44em}
+.origin-l{font-size:12.5px; font-weight:500; color:var(--pink-ink); margin-bottom:10px}
+.origin p{font-size:16.5px}
+.goalrow > div{border-top:3px solid var(--pink)}
+.goalrow > div:nth-child(2){border-top-color:var(--orange)} .goalrow > div:nth-child(3){border-top-color:var(--blue)}
+
+.pillarbar{display:flex; border-radius:10px; overflow:hidden; margin:22px 0 26px; min-height:64px}
+.pillarbar > div{color:#fff; font-size:12.5px; padding:10px 10px; line-height:1.3; min-width:0; overflow:hidden}
+.pillarbar b{display:block; font-family:var(--display); font-weight:400; font-size:20px}
+.pb1{background:#FC2F78} .pb2{background:#1C43CA} .pb3{background:#F18D44} .pb4{background:#C2245F} .pb5{background:#2B2A33}
+@media(max-width:620px){ .pillarbar{flex-direction:column} .pillarbar > div{flex:none !important} }
+.job .pill{margin-left:4px}
+
+.fmtcards .card.c1{border-top-color:var(--pink)} .fmtcards .card.c2{border-top-color:var(--blue)} .fmtcards .card.c3{border-top-color:var(--orange)}
+.fmtcards .card.c1 h4{color:var(--pink-ink)} .fmtcards .card.c2 h4{color:var(--blue)} .fmtcards .card.c3 h4{color:var(--orange-ink)}
+.plat{border-top:4px solid var(--c)}
+.plat.p-ig{border-top-color:var(--pink)} .plat.p-tt{border-top-color:var(--orange)} .plat.p-fb{border-top-color:#1C43CA} .plat.p-li{border-top-color:var(--slate)}
+
+.path{display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; margin:16px 0 10px}
+.pstep{background:var(--card); border:1px solid var(--rule); border-radius:10px; padding:14px; font-size:14px; min-width:0}
+.pstep b{display:inline-flex; width:26px; height:26px; border-radius:50%; align-items:center; justify-content:center; background:var(--orange); color:#fff; font-weight:500; font-size:13px; margin-bottom:8px}
+@media(max-width:820px){ .path{grid-template-columns:1fr} .pstep{display:flex; gap:12px; align-items:center} .pstep b{margin:0; flex:none} }
+.whyline{font-size:14px; color:var(--body); background:var(--ct); border-radius:6px; padding:8px 11px; margin-top:6px}
+.whyline b{color:var(--c-ink); font-weight:500}
+.wire{display:grid; gap:8px; margin:16px 0; padding:14px; border:1px solid var(--rule); border-radius:12px; background:var(--card); max-width:46em}
+.wrow{display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:8px}
+.wb{border:1.5px dashed var(--orange); border-radius:8px; padding:10px 12px; font-size:13px; min-width:0}
+.wb b{display:block; font-weight:500; color:var(--ink); font-size:13.5px}
+.wb span{color:var(--muted)}
+.w-hero{background:var(--tint-orange); padding:26px 14px; border-style:solid}
+.w-foot{background:var(--rule-soft); border-style:solid; border-color:var(--rule)}
+.optional{display:inline-block; vertical-align:middle; font-family:var(--text); font-size:13px; font-weight:500; color:#fff; background:var(--orange); padding:4px 12px; border-radius:100px; margin-left:8px; letter-spacing:.02em}
+</style>
+
+<div class="topstripe"><i></i><i></i><i></i></div>
+<div class="masthead">
+  <div class="in">
+    <img class="mark" alt="Cach Creative" src="data:image/png;base64,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">
+    <div class="date">Strategy, October 2026</div>
+  </div>
+</div>
+
+<div class="shell">
+  <aside class="rail">
+    <div class="rt">Sections</div>
+    <nav id="nav">
+      <div class="grp-l" data-g="f">Foundation</div>
+      <button data-g="f" data-p="northstar">North star</button>
+      <button data-g="f" data-p="ecosystem">The ecosystem</button>
+      <button data-g="f" data-p="audience">Audience</button>
+      <button data-g="f" data-p="positioning">Positioning and voice</button>
+      <div class="grp-l" data-g="s">Social</div>
+      <button data-g="s" data-p="pillars">Pillars and content</button>
+      <button data-g="s" data-p="series">Recurring series</button>
+      <button data-g="s" data-p="funnel">The funnel</button>
+      <button data-g="s" data-p="platforms">Platform strategies</button>
+      <button data-g="s" data-p="production">Production</button>
+      <button data-g="s" data-p="search">Search</button>
+      <button data-g="s" data-p="community">Community and enquiries</button>
+      <div class="grp-l" data-g="w">Website</div>
+      <button data-g="w" data-p="website">Website strategy</button>
+      <div class="grp-l" data-g="b">Business</div>
+      <button data-g="b" data-p="ops">Business operations</button>
+      <button data-g="b" data-p="book">The book</button>
+      <button data-g="b" data-p="ads">Paid advertising</button>
+      <div class="grp-l" data-g="r">Running it</div>
+      <button data-g="r" data-p="measure">Targets and measurement</button>
+      <button data-g="r" data-p="roadmap">First 90 days</button>
+      <button data-g="r" data-p="decisions">Decisions needed</button>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="hero">
+      <img src="data:image/jpeg;base64,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" alt="Janet Goldblatt">
+      <div>
+        <div class="hn">Janet Goldblatt</div>
+        <div class="hs">Your social, website and business strategy. Prepared for you, with Brett and Jonny.</div>
+      </div>
+    </div>
+
+<!-- ============ NORTH STAR ============ -->
+<div class="panel" id="northstar" data-g="f">
+  <p class="snum">Part one · Foundation</p>
+  <h2>North star</h2>
+  <p class="intro">Everything in this strategy points at one purpose. Every post, page and process that follows has to move people towards it.</p>
+
+  <div class="northstar">
+    <div class="ns-stripe"><i></i><i></i><i></i></div>
+    <div class="ns-l">Your north star</div>
+    <div class="ns-q">Help people see what they carry, understand where it comes from, and put down what is not theirs, so they can bring who they really are into the world.</div>
+    <div class="ns-steps">
+      <div class="st st1"><div class="sn">See it</div><p>The first moment of recognition. A reel or a post names a pattern someone has lived with for years.</p><div class="sw">Social media</div></div>
+      <div class="st st2"><div class="sn">Understand it</div><p>They want to know more. Your story, your writing and your website explain where it comes from and how you work.</p><div class="sw">Website, email, the book</div></div>
+      <div class="st st3"><div class="sn">Put it down</div><p>The work itself. A retreat, a constellation, a workshop or a session, where the change actually happens.</p><div class="sw">Your offers</div></div>
+    </div>
+  </div>
+
+  <div class="origin">
+    <div class="origin-l">Where it comes from</div>
+    <p>You were twelve when your father was killed during the 1976 Soweto uprising. He is remembered as one of its unsung heroes. That loss shaped your life, and it put one question at the centre of your work: what do we carry, and what do we pass on?</p>
+    <p>You have spent more than fifteen years helping other people answer it, in boardrooms through nowhere Africa and YPO, and in constellation circles, retreats and private sessions. From the outside these look like separate businesses. They are one body of work. A leadership team stuck in an old pattern and a family repeating the same story for three generations need the same thing: someone who can help them see it.</p>
+    <p>Until now, each platform and your website has shown a different part of you. This strategy brings the parts together, so people meet one person, one story and clear ways to work with you.</p>
+  </div>
+
+  <div class="goalrow">
+    <div><div class="gl">Primary goal</div><div class="gv">Qualified enquiries every month</div><div class="gs">For retreats, constellation groups, workshops and private sessions.</div></div>
+    <div><div class="gl">Supporting goal</div><div class="gv">Card orders and book sign-ups</div><div class="gs">The lower-commitment ways in.</div></div>
+    <div><div class="gl">Required to measure it</div><div class="gv">GA4 and a working pixel</div><div class="gs">A must in Jonny's brief.</div></div>
+  </div>
+
+  <details class="sec first">
+    <summary>What you have built</summary>
+    <div class="inner">
+      <ul>
+        <li>Managing Director of nowhere Africa since 2010, working with Deloitte, Old Mutual, Momentum and others</li>
+        <li>Accredited transformational forum facilitator for YPO</li>
+        <li>Thirteen years training and practising in Family Constellations</li>
+        <li>Retreats, workshops, constellation groups and private sessions</li>
+        <li>Creator of In me I C and of Upside</li>
+        <li>A book in progress about your life and what you have learned from others</li>
+      </ul>
+      <p>That is an unusual amount of depth. The job of this strategy is to make it visible and easy to understand.</p>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Why enquiries, not followers</summary>
+    <div class="inner"><p>Followers and views are tracked, but they are leading indicators. A thousand new followers who never ask about a retreat do not help your business. An enquiry is where social, the website and operations all have to work together, so it tells us whether the whole ecosystem is doing its job.</p></div>
+  </details>
+  <details class="sec">
+    <summary>Who should read what</summary>
+    <div class="inner">
+      <p>Social comes first, then the website as the owned hub, then the business side. Everyone reads the foundation sections, then:</p>
+      <ul>
+        <li><strong>You:</strong> everything, especially positioning, the book and decisions.</li>
+        <li><strong>Brett:</strong> the funnel, community and enquiries, business operations and the business plan, the book and paid advertising.</li>
+        <li><strong>Jonny:</strong> search and the website strategy, which becomes his developer brief after sign-off.</li>
+      </ul>
+    </div>
+  </details>
+  <div class="nextrow"><div class="nl">Next</div><button data-goto="ecosystem">The ecosystem</button></div>
+</div>
+
+<!-- ============ ECOSYSTEM ============ -->
+<div class="panel" id="ecosystem" data-g="f">
+  <p class="snum">Part two · Foundation</p>
+  <h2>The ecosystem</h2>
+  <p class="intro">Five stages from first sight to booking and back again, each with an owner.</p>
+
+  <div class="eco">
+    <div class="stage s1"><div class="sl">Stage 1</div><h4>Discover</h4><ul><li>TikTok</li><li>Instagram reels</li><li>LinkedIn</li><li>Google search</li></ul><div class="own">Cach</div></div>
+    <div class="stage s2"><div class="sl">Stage 2</div><h4>Connect</h4><ul><li>Carousels and stories</li><li>Facebook</li><li>LinkedIn posts</li><li>DMs and comments</li></ul><div class="own">Cach</div></div>
+    <div class="stage s3"><div class="sl">Stage 3</div><h4>Explore</h4><ul><li>Website offer pages</li><li>Start here page</li><li>The book page</li></ul><div class="own">Jonny, from Cach's direction</div></div>
+    <div class="stage s4"><div class="sl">Stage 4</div><h4>Convert</h4><ul><li>Enquiry and booking forms</li><li>WhatsApp</li><li>Card checkout</li><li>Email sign-up</li></ul><div class="own">Brett, with Cach for DMs</div></div>
+    <div class="stage s5"><div class="sl">Stage 5</div><h4>Return</h4><ul><li>Email</li><li>Testimonials</li><li>Attendee stories</li><li>Next event</li></ul><div class="own">Brett and Cach</div></div>
+  </div>
+  <p class="loopnote">Stage five feeds stage one: an attendee's story becomes the content that persuades the next person.</p>
+
+  <details class="sec first">
+    <summary>Who owns what</summary>
+    <div class="inner wide">
+      <div class="tw"><table>
+        <thead><tr><th>Who</th><th>Owns</th><th>Hands to</th></tr></thead>
+        <tbody>
+          <tr><td>Cach</td><td>Strategy, brand identity, content, posting, DMs, comments, monthly report, lead magnet, website hero and mockups</td><td>Brett: qualified DM enquiries. Jonny: website direction, brand files and reels to embed.</td></tr>
+          <tr><td>Jonny</td><td>Website, Shopify, GA4, pixel fix, forms, WhatsApp button, sign-up and reel embeds</td><td>Brett: enquiries and orders. Cach: analytics access.</td></tr>
+          <tr><td>Brett</td><td>The business plan, website enquiries, bookings, calendar, email tool, card fulfilment, testimonials</td><td>Cach: dates, prices and results monthly.</td></tr>
+          <tr><td>You</td><td>The work itself, shoot days, LinkedIn approval and activity, the book, final say on dates and prices</td><td>Cach: clips from your week.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>The five rules that connect it</summary>
+    <div class="inner">
+      <ol>
+        <li><strong>One destination.</strong> Every link goes to the specific page on janetgoldblatt.co.za, never just the homepage.</li>
+        <li><strong>Two ways to say yes.</strong> The website, or a DM and WhatsApp conversation. Both end with Brett.</li>
+        <li><strong>One identity.</strong> Same name, photo, brand, bio wording and owl everywhere.</li>
+        <li><strong>One calendar.</strong> Brett keeps it. If a date is not on it, it is not promoted.</li>
+        <li><strong>Every post has a next step.</strong> Save, share, comment a keyword or tap through.</li>
+      </ol>
+    </div>
+  </details>
+  <div class="nextrow"><div class="nl">Next</div><button data-goto="audience">Audience</button></div>
+</div>
+
+<!-- ============ AUDIENCE ============ -->
+<div class="panel" id="audience" data-g="f">
+  <p class="snum">Part three · Foundation</p>
+  <h2>Audience</h2>
+  <p class="intro">Four groups, each arriving through a different door. All four respond to the same message: honest talk about family, purpose and what gets passed down. Only the format and the next step change.</p>
+
+  <details class="sec first">
+    <summary>The woman in her second half <span class="sum-tag">Core · 45 to 65</span></summary>
+    <div class="inner">
+      <p>South African women, already the majority of your Instagram and Facebook. Often at a turning point: children leaving, a parent ageing, a career winding down. Asking what she is still carrying from her family.</p>
+      <p><strong>Door:</strong> Instagram, Facebook, word of mouth. <strong>First step:</strong> a constellation group or the cards. <strong>Buys:</strong> retreats, constellations, the book.</p>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>The searcher <span class="sum-tag">Growth · 25 to 44</span></summary>
+    <div class="inner">
+      <p>Mostly women reached through TikTok, arriving via searches about retreats and letting go of the past. Noticing patterns she would rather not repeat.</p>
+      <p><strong>Door:</strong> TikTok search, reels. <strong>First step:</strong> saving content, the lead magnet, the cards. <strong>Buys:</strong> workshops, cards, constellations later.</p>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>The leader <span class="sum-tag">High value</span></summary>
+    <div class="inner">
+      <p>Executives and business owners in your LinkedIn, nowhere and YPO networks. Successful and asking what it is all for. Responds to purpose retreats, as your two best LinkedIn posts showed.</p>
+      <p><strong>Door:</strong> LinkedIn, referral. <strong>First step:</strong> a conversation. <strong>Buys:</strong> purpose retreats, team workshops, consulting.</p>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>The international circle <span class="sum-tag">Watch list</span></summary>
+    <div class="inner"><p>A small, consistent group in the US, UK, Israel and Australia, likely the wider South African diaspora. First step: the book waitlist. Revisit at six months, or if online constellations are offered.</p></div>
+  </details>
+  <div class="nextrow"><div class="nl">Next</div><button data-goto="positioning">Positioning and voice</button></div>
+</div>
+
+<!-- ============ POSITIONING ============ -->
+<div class="panel" id="positioning" data-g="f">
+  <p class="snum">Part four · Foundation</p>
+  <h2>Positioning and voice</h2>
+  <p class="intro">One line that holds every offer together. It stays the same everywhere.</p>
+
+  <div class="mock"><div class="mock-h"><span>Positioning line, for bios, the website and introductions</span><button type="button" class="copy">Copy</button></div><div class="mock-b">Janet Goldblatt helps people understand what they carry from their families and their past, so they can live and lead with purpose.</div></div>
+
+  <details class="sec first">
+    <summary>How your offers fit together</summary>
+    <div class="inner wide">
+      <div class="tw"><table>
+        <thead><tr><th>Offer</th><th>In one line</th><th>How people buy</th></tr></thead>
+        <tbody>
+          <tr><td>Retreats</td><td>Time away to look at your life, patterns and purpose</td><td>Enquire, or book a scheduled date</td></tr>
+          <tr><td>Family Constellations</td><td>A group process that makes hidden family patterns visible</td><td>Enquire, or book a group</td></tr>
+          <tr><td>Workshops</td><td>Shorter group sessions on one theme</td><td>Enquire, or book a date</td></tr>
+          <tr><td>Private sessions</td><td>One to one work with you</td><td>Enquire</td></tr>
+          <tr><td>In me I C</td><td>Self-reflection cards, made to order</td><td>Buy online</td></tr>
+          <tr><td>Retreat in a Box</td><td>A take-home retreat. Timeline to be confirmed.</td><td>Waitlist</td></tr>
+          <tr><td>The book</td><td>Your story and what you have learned</td><td>Waitlist</td></tr>
+          <tr><td>Leadership and consulting</td><td>nowhere Africa and Upside, on its own page</td><td>Get in touch</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">Consulting stays visible but moves to its own page, so its language no longer sits on the retreat and constellation pages.</p>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Brand direction</summary>
+    <div class="inner">
+      <p>The brand identity Cach is producing will be designed against these points.</p>
+      <ul>
+        <li><strong>Feeling:</strong> calm, warm, grounded, wise. A quiet room with good light, not a spa or a seminar.</li>
+        <li><strong>The owl:</strong> stays as the thread between your two worlds, evolved to feel more grounded, used small and consistently.</li>
+        <li><strong>You at the centre:</strong> your face on reel covers, your own spaces, real venues and hands on the cards. Stock as a last resort.</li>
+        <li><strong>Legibility first:</strong> a heavier headline face, a reflective serif for quotes, sentence case, everything tested at thumbnail size.</li>
+      </ul>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Your voice</summary>
+    <div class="inner">
+      <p><strong>You sound like:</strong> first person, specific, unhurried, warm but direct. Questions that make people stop. Real stories with names changed.</p>
+      <p><strong>You never sound like:</strong> generic wellness copy, pressure selling, stacked emojis, or anything that identifies a client.</p>
+      <div class="block fixnote"><span class="tag"><span class="dot"></span>A line we hold</span><p>Trauma and family patterns are framed as understanding and growth, never treatment. Constellations complement therapy and the content will never suggest otherwise.</p></div>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Your handle and name</summary>
+    <div class="inner"><p><strong>Recommendation:</strong> move Instagram and TikTok to @janetgoldblatt if it is available, because people who meet you at a retreat or read your book will search your name. If you are attached to the catalyst handle, it can stay. The Name field matters more and can change freely. A handle change keeps your followers, but old tags and links break, so the website and platforms are updated on the same day.</p></div>
+  </details>
+  <div class="nextrow"><div class="nl">Next</div><button data-goto="pillars">Pillars and content</button></div>
+</div>
+
+<!-- ============ PILLARS ============ -->
+<div class="panel" id="pillars" data-g="s">
+  <p class="snum">Part five · Social</p>
+  <h2>Pillars and content</h2>
+  <p class="intro">Five themes, each with a job and a share of the content. Open a pillar for its idea bank, which Cach draws from on each shoot day.</p>
+
+  <div class="pillarbar">
+    <div style="flex:30" class="pb1"><b>30%</b>What we carry</div>
+    <div style="flex:25" class="pb2"><b>25%</b>Retreat room</div>
+    <div style="flex:20" class="pb3"><b>20%</b>The book</div>
+    <div style="flex:15" class="pb4"><b>15%</b>Reflection</div>
+    <div style="flex:10" class="pb5"><b>10%</b>Purpose</div>
+  </div>
+
+  <details class="sec first">
+    <summary>What we carry <span class="sum-tag">30% · Discover</span></summary>
+    <div class="inner">
+      <p class="job">Family patterns and inherited beliefs, explained simply. Built on the terms people already search. <span class="pill tt">TikTok</span><span class="pill ig">Instagram</span></p>
+      <ul class="ideas">
+        <li><span class="fmt">Reel</span><span>"What is a family constellation?" in under 45 seconds.</span></li>
+        <li><span class="fmt">Reel</span><span>"Three signs you are carrying something that is not yours."</span></li>
+        <li><span class="fmt">Carousel</span><span>"What your family taught you without saying a word."</span></li>
+        <li><span class="fmt">Reel</span><span>"What you resist persists." An existing TikTok search route.</span></li>
+        <li><span class="fmt">Reel</span><span>"Why the same argument keeps happening in your family."</span></li>
+        <li><span class="fmt">Carousel</span><span>"Inherited or chosen?" A self-check to send to a sibling.</span></li>
+        <li><span class="fmt">Reel</span><span>"How to leave the past behind without pretending it didn't happen."</span></li>
+      </ul>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>The retreat room <span class="sum-tag">25% · Convert</span></summary>
+    <div class="inner">
+      <p class="job">What actually happens at a retreat, group or workshop. Answers the questions that stop people booking. <span class="pill ig">Instagram</span><span class="pill tt">TikTok</span><span class="pill li">LinkedIn</span></p>
+      <ul class="ideas">
+        <li><span class="fmt">Reel</span><span>"What is the purpose of a retreat?" Your top search term.</span></li>
+        <li><span class="fmt">Carousel</span><span>"What a day at one of my retreats looks like."</span></li>
+        <li><span class="fmt">Reel</span><span>"Who comes to a constellation group?"</span></li>
+        <li><span class="fmt">Reel</span><span>An attendee in their own words, with consent.</span></li>
+        <li><span class="fmt">Story</span><span>Venue walkthrough and quiet behind the scenes, no attendee faces.</span></li>
+        <li><span class="fmt">Carousel</span><span>"Questions people ask before booking."</span></li>
+        <li><span class="fmt">Reel</span><span>"How to know if you are ready for a retreat." Ends with RETREAT.</span></li>
+      </ul>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Writing the book <span class="sum-tag">20% · Connect</span></summary>
+    <div class="inner">
+      <p class="job">Your story and the story of writing it. The spine of the content, and it fills the waitlist early. <span class="pill ig">Instagram</span><span class="pill fb">Facebook</span><span class="pill li">LinkedIn</span></p>
+      <ul class="ideas">
+        <li><span class="fmt">Reel</span><span>"I am writing a book." Why now and what it is about.</span></li>
+        <li><span class="fmt">Carousel</span><span>"What my father left me." With your approval on every word.</span></li>
+        <li><span class="fmt">Reel</span><span>"A chapter I nearly cut." Monthly diary entry.</span></li>
+        <li><span class="fmt">Photo</span><span>Old family photographs with a short caption. Strong on Facebook.</span></li>
+        <li><span class="fmt">Reel</span><span>"How I came to this work."</span></li>
+        <li><span class="fmt">Story</span><span>"What would you want to read about?" question box.</span></li>
+        <li><span class="fmt">Reel</span><span>"The final draft is done." The December milestone.</span></li>
+      </ul>
+      <div class="block fixnote" style="margin-bottom:0"><span class="tag"><span class="dot"></span>Alias rule</span><p>No names, places or details that could identify anyone in your book or your client work. Your own story is yours to tell.</p></div>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Everyday reflection <span class="sum-tag">15% · Save and share</span></summary>
+    <div class="inner">
+      <p class="job">Short practices and questions, mostly built around In me I C. The most saveable content, and the home of the cards. <span class="pill ig">Instagram</span><span class="pill fb">Facebook</span></p>
+      <ul class="ideas">
+        <li><span class="fmt">Story</span><span>Card of the week, drawn on camera with one question.</span></li>
+        <li><span class="fmt">Carousel</span><span>"Five questions to ask yourself before the year ends."</span></li>
+        <li><span class="fmt">Reel</span><span>"How I use these cards with a client."</span></li>
+        <li><span class="fmt">Carousel</span><span>"Send this to someone who is carrying too much."</span></li>
+        <li><span class="fmt">Reel</span><span>"Made by hand, when you order."</span></li>
+        <li><span class="fmt">Quote</span><span>One line from you. Twice a month at most.</span></li>
+      </ul>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Leading with purpose <span class="sum-tag">10% · Bridge</span></summary>
+    <div class="inner">
+      <p class="job">Where your leadership and personal growth work meet. Mostly LinkedIn. <span class="pill li">LinkedIn</span><span class="pill ig">Instagram</span></p>
+      <ul class="ideas">
+        <li><span class="fmt">Document</span><span>"What 15 years in boardrooms and constellation circles taught me."</span></li>
+        <li><span class="fmt">Post</span><span>"Your team is not stuck. It is loyal to something."</span></li>
+        <li><span class="fmt">Video</span><span>"Why successful people come on purpose retreats."</span></li>
+        <li><span class="fmt">Post</span><span>"The question I ask every leader on day one."</span></li>
+        <li><span class="fmt">Document</span><span>"Signs your team needs time away, not another strategy session."</span></li>
+      </ul>
+    </div>
+  </details>
+  <div class="nextrow"><div class="nl">Next</div><button data-goto="series">Recurring series</button></div>
+</div>
+
+<!-- ============ SERIES ============ -->
+<div class="panel" id="series" data-g="s">
+  <p class="snum">Part six · Social</p>
+  <h2>Recurring series</h2>
+  <p class="intro">Fixed formats make the shoot day faster and teach your followers what to expect.</p>
+
+  <div class="tw"><table>
+    <thead><tr><th>Series</th><th>Format</th><th>How often</th><th>Platforms</th></tr></thead>
+    <tbody>
+      <tr><td>What you carry</td><td>Reel, one pattern in 45 seconds</td><td>Weekly</td><td><span class="pill ig">IG</span><span class="pill tt">TT</span><span class="pill fb">FB</span></td></tr>
+      <tr><td>Card of the week</td><td>Story, card draw and one question</td><td>Weekly</td><td><span class="pill ig">IG</span><span class="pill fb">FB</span></td></tr>
+      <tr><td>Writing the book</td><td>Reel and post, diary entry</td><td>Monthly</td><td><span class="pill ig">IG</span><span class="pill fb">FB</span><span class="pill li">LI</span></td></tr>
+      <tr><td>Ask Janet</td><td>Anonymous question box, answered on camera</td><td>Monthly</td><td><span class="pill ig">IG</span><span class="pill tt">TT</span></td></tr>
+      <tr><td>After the retreat</td><td>Reel, attendee interview with consent</td><td>After events</td><td><span class="pill ig">IG</span><span class="pill tt">TT</span><span class="pill li">LI</span></td></tr>
+      <tr><td>Inside a constellation</td><td>Carousel, the process step by step</td><td>Monthly</td><td><span class="pill ig">IG</span><span class="pill fb">FB</span></td></tr>
+      <tr><td>Purpose at work</td><td>LinkedIn post</td><td>Fortnightly</td><td><span class="pill li">LI</span></td></tr>
+      <tr><td>Sunday question</td><td>Carousel, one question for the week</td><td>Monthly</td><td><span class="pill ig">IG</span><span class="pill fb">FB</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <details class="sec first">
+    <summary>Why each series earns its place</summary>
+    <div class="inner">
+      <ul>
+        <li><strong>What you carry</strong> is the search-led growth engine, filmed four at a time.</li>
+        <li><strong>Card of the week</strong> builds a Monday habit and quietly sells the cards.</li>
+        <li><strong>Writing the book</strong> is the longest-running thread and fills the waitlist.</li>
+        <li><strong>Ask Janet</strong> lets your audience write the brief without revealing who they are. From our first meeting.</li>
+        <li><strong>After the retreat</strong> is the most persuasive content, because someone else says it works. From our first meeting.</li>
+        <li><strong>Inside a constellation</strong> explains the offer most people do not understand yet, using illustration rather than real sessions.</li>
+        <li><strong>Purpose at work</strong> keeps leaders engaged between retreat posts.</li>
+        <li><strong>Sunday question</strong> is calm, saveable and a soft way into the cards.</li>
+      </ul>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>How the series fill the monthly quota</summary>
+    <div class="inner"><p>Of 12 reels: four What you carry, one or two Ask Janet, one Writing the book, one After the retreat when there is an event. Four or five stay free for timely content. Of 4 carousels: one Inside a constellation, one Sunday question, two free.</p></div>
+  </details>
+  <div class="nextrow"><div class="nl">Next</div><button data-goto="funnel">The funnel</button></div>
+</div>
+
+<!-- ============ FUNNEL ============ -->
+<div class="panel" id="funnel" data-g="s">
+  <p class="snum">Part seven · Social</p>
+  <h2>The funnel</h2>
+  <p class="intro">The audit's biggest leak was between seeing you and visiting your website. Every stage below gives people a clear next step.</p>
+
+  <div class="tw"><table>
+    <thead><tr><th>Stage</th><th>They think</th><th>Content</th><th>Next step</th><th>We watch</th></tr></thead>
+    <tbody>
+      <tr><td>Awareness</td><td>"That is my family."</td><td>What you carry, search-led TikToks</td><td>Follow, save, send</td><td>Non-follower views, shares</td></tr>
+      <tr><td>Interest</td><td>"Who is she?"</td><td>Carousels, Writing the book, bio, highlights</td><td>Profile, link, email sign-up</td><td>Link taps, sign-ups</td></tr>
+      <tr><td>Consideration</td><td>"Is this for me?"</td><td>Retreat room, After the retreat, offer pages</td><td>Comment a keyword, DM</td><td>Keyword comments, DMs</td></tr>
+      <tr><td>Decision</td><td>"How do I go?"</td><td>Dates in stories, forms, WhatsApp, email</td><td>Enquire or book</td><td>Qualified enquiries</td></tr>
+      <tr><td>Return</td><td>"I told my sister."</td><td>Newsletter, next dates, cards, book</td><td>Rebook, refer</td><td>Repeat bookings</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="grid2">
+    <div class="card"><div class="k">Route one</div><h4>The website</h4><p>For people who decide on their own. Offer pages end in a short form, with booking where dates exist. Cards sell through Shopify. Brett replies.</p></div>
+    <div class="card"><div class="k">Route two</div><h4>The conversation</h4><p>For people who want to talk first. A keyword comment triggers a DM with the right page, carried on in DMs or WhatsApp. Cach passes it to Brett the same day.</p></div>
+  </div>
+  <details class="sec first">
+    <summary>Why both routes</summary>
+    <div class="inner"><p>High-trust purchases convert best when nothing stands between "I want this" and saying so. Some people fill in a form at midnight, others only book after a conversation, and much of your audience is over 45. Both routes point to the website for detail, so it stays the hub.</p></div>
+  </details>
+  <div class="nextrow"><div class="nl">Next</div><button data-goto="platforms">Platform strategies</button></div>
+</div>
+
+<!-- ============ PLATFORMS ============ -->
+<div class="panel" id="platforms" data-g="s">
+  <p class="snum">Part eight · Social</p>
+  <h2>Platform strategies</h2>
+  <p class="intro">Content is made once and shaped for each platform. Each platform has one main job.</p>
+
+  <div class="grid3 fmtcards">
+    <div class="card c1"><div class="k">Reels · 12 a month</div><h4>For growth</h4><p>Reach people who do not follow you yet. Ranked on watch time and DM sends.</p></div>
+    <div class="card c2"><div class="k">Carousels · 4 a month</div><h4>For interaction</h4><p>The most engagement per view. Each swipe counts as time spent, and they get saved.</p></div>
+    <div class="card c3"><div class="k">Stories · 3 a week</div><h4>For nurturing community</h4><p>Keep your warmest followers close with polls, questions and dates.</p></div>
+  </div>
+
+  <details class="sec first">
+    <summary>A sample week</summary>
+    <div class="inner wide">
+      <div class="wrapx"><div class="cadence">
+        <div class="d"><b>Mon</b><span>Story: card of the week</span></div>
+        <div class="d"><b>Tue</b><span>Reel</span><span>LinkedIn</span></div>
+        <div class="d"><b>Wed</b><span>Carousel</span><span>Story</span></div>
+        <div class="d"><b>Thu</b><span>Reel</span></div>
+        <div class="d"><b>Fri</b><span>Story</span><span>FB photo</span></div>
+        <div class="d"><b>Sat</b><span>Reel</span></div>
+        <div class="d"><b>Sun</b><span>Rest, or Sunday question</span></div>
+      </div></div>
+      <p class="note">Inside the contracted quota. Every reel also goes to TikTok and Facebook. Posting times are set from Instagram data after month one.</p>
+    </div>
+  </details>
+
+  <div class="plat p-ig">
+    <div class="plat-head"><h3>Instagram</h3><span class="role ig">Front door and hub</span><span class="size">Primary</span></div>
+    <details class="first">
+      <summary>Profile copy</summary>
+      <div class="inner">
+        <div class="mock"><div class="mock-h"><span>Name field</span><button type="button" class="copy">Copy</button></div><div class="mock-b">Janet Goldblatt | Retreats & Family Constellations</div></div>
+        <div class="mock"><div class="mock-h"><span>Bio</span><button type="button" class="copy">Copy</button></div><div class="mock-b">Helping you understand what you carry, so you can live with purpose.
+Retreats · Constellation groups · Workshops · In me I C cards
+Book or enquire below</div></div>
+        <p>Category changes from Community to Coach or Author. The link goes to a Start here page on your website, so every visit is counted in GA4.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Highlights and pinned posts</summary>
+      <div class="inner">
+        <p><strong>Highlights:</strong> Start here, Retreats, Constellations, In me I C, Kind words, The book. Each goes live once it has content.</p>
+        <p><strong>Pinned:</strong> an introduction reel, a representative What you carry reel, and a "how to work with me" carousel.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Hooks and calls to action</summary>
+      <div class="inner">
+        <p>Every reel opens with you already talking and the key phrase on screen. Starting points:</p>
+        <ul>
+          <li>"If your family has a rule nobody ever said out loud, this is for you."</li>
+          <li>"The purpose of a retreat is not to escape your life."</li>
+          <li>"You can love your mother and still not want her life."</li>
+        </ul>
+        <p>Calls to action rotate: send this to someone, save this, comment RETREAT, link in bio. No printed web addresses.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Keyword automations</summary>
+      <div class="inner">
+        <p>A Meta-approved tool such as ManyChat sends the right page by DM when someone comments a keyword. Cach then picks up the conversation.</p>
+        <p><strong>RETREAT</strong> Retreats page · <strong>CONSTELLATION</strong> constellations page and next date · <strong>CARDS</strong> shop page · <strong>BOOK</strong> waitlist · <strong>REFLECT</strong> the free lead magnet.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Trial reels</summary>
+      <div class="inner"><p>Instagram's trial reels show a reel to non-followers first. We use them to test two hooks before choosing one for your followers.</p></div>
+    </details>
+  </div>
+
+  <div class="plat p-tt">
+    <div class="plat-head"><h3>TikTok</h3><span class="role tt">Discovery through search</span><span class="size">Growth</span></div>
+    <details class="first">
+      <summary>The native edit</summary>
+      <div class="inner">
+        <p>Each reel gets a separate TikTok edit: a different opening, the search phrase spoken in the first three seconds and shown on screen in the first frame, captions burned in, no watermark. TikTok transcribes speech and reads on-screen text, so an unchanged Instagram upload misses two of its three signals.</p>
+        <p>The account switches to a business account so it can carry a website link before 1 000 followers.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Bio and search phrases</summary>
+      <div class="inner">
+        <div class="mock"><div class="mock-h"><span>TikTok bio</span><button type="button" class="copy">Copy</button></div><div class="mock-b">Family patterns, purpose and retreats. Johannesburg.
+Constellation groups · In me I C cards
+Start here ↓</div></div>
+        <p>Start with: purpose of a retreat, retreat South Africa, what is a family constellation, family constellations Johannesburg, generational patterns, how to let go of the past, what you resist persists.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="plat p-fb">
+    <div class="plat-head"><h3>Facebook</h3><span class="role fb">The community</span><span class="size">Support</span></div>
+    <details class="first">
+      <summary>What goes here</summary>
+      <div class="inner">
+        <p>Reels and carousels posted manually by Cach, without the Instagram watermark, plus one personal photo with a short story each week, since photos and personal posts drove reach in the audit. Facebook Events for every dated group and retreat, because your 55-plus audience plans with them.</p>
+        <div class="mock"><div class="mock-h"><span>Facebook intro</span><button type="button" class="copy">Copy</button></div><div class="mock-b">I help people understand what they carry from their families and their past, so they can live and lead with purpose. Retreats, Family Constellations, workshops and private sessions in Johannesburg.</div></div>
+      </div>
+    </details>
+  </div>
+
+  <div class="plat p-li">
+    <div class="plat-head"><h3>LinkedIn</h3><span class="role li">Bridge between both worlds</span><span class="size">4 posts a month</span></div>
+    <p class="plat-sum">nowhere stays as your title, with your personal growth work added alongside. You approve every post and reply to comments yourself, ideally within the first hour.</p>
+    <details class="first">
+      <summary>Monthly mix</summary>
+      <div class="inner">
+        <ol>
+          <li>Document carousel, adapted from Instagram · Leading with purpose</li>
+          <li>Text with one strong image · The retreat room</li>
+          <li>Short subtitled video · Writing the book</li>
+          <li>Text story, 1 200 to 1 500 characters · Purpose at work</li>
+        </ol>
+        <p class="note">LinkedIn rewards reading time and real comments. Document carousels hold attention longest. Links go in the first comment, because links in the post reduce reach.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Headline and Featured</summary>
+      <div class="inner">
+        <div class="mock"><div class="mock-h"><span>Headline</span><button type="button" class="copy">Copy</button></div><div class="mock-b">Catalyst & Director, nowhere Africa | Purpose retreats and Family Constellations | Writing a book on what we carry</div></div>
+        <div class="mock"><div class="mock-h"><span>Featured</span><button type="button" class="copy">Copy</button></div><div class="mock-b">1. Purpose retreats: janetgoldblatt.co.za/retreats
+2. Family Constellations: janetgoldblatt.co.za/family-constellations
+3. The book: join the waitlist
+4. Leadership and consulting: janetgoldblatt.co.za/leadership</div></div>
+      </div>
+    </details>
+    <details>
+      <summary>About section</summary>
+      <div class="inner">
+        <div class="mock"><div class="mock-h"><span>About</span><button type="button" class="copy">Copy</button></div><div class="mock-b">For more than 15 years I have led nowhere Africa, helping leaders and their organisations build cultures that can innovate. I have worked with teams at Deloitte, Old Mutual, Momentum and others, and I am an accredited transformational forum facilitator for YPO.
+
+Alongside that work, I have spent 13 years training and practising in Family Constellations. I run retreats, workshops, constellation groups and private sessions for people who want to understand what shapes them.
+
+The two sides of my work ask the same question. What are we carrying that is not ours to carry, and what becomes possible when we put it down? In a boardroom it might be a team stuck in an old pattern. In a constellation it might be a family story that has repeated for three generations.
+
+I grew up in South Africa during apartheid. When I was 12, my father was killed during the 1976 Soweto uprising. That loss put transformation at the centre of my life. I am now writing a book about it, and about what I have learned from the people I have worked with.
+
+I also created Upside, a coaching system for individual and team challenges, and In me I C, a card set for self-reflection.
+
+If you are thinking about a purpose retreat for yourself or your leadership team, or you want to know more about Family Constellations, you will find everything at janetgoldblatt.co.za.</div></div>
+        <p class="note">Needs your approval, especially the line about your father.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Sample post</summary>
+      <div class="inner">
+        <div class="mock"><div class="mock-h"><span>The retreat room</span><button type="button" class="copy">Copy</button></div><div class="mock-b">The most successful people I work with often arrive at a retreat with the same sentence.
+
+"I have everything I said I wanted. So why does it feel like something is missing?"
+
+It is not a crisis. Most of them are doing well by every measure that shows up in a performance review. What they have lost is the thread between what they do every day and why they started.
+
+A purpose retreat is not a holiday from that question. It is time set aside to answer it properly, away from the meetings and the phone, with people who are asking the same thing.
+
+On the first morning I ask everyone one question: what are you carrying that you never chose to pick up? The answers are rarely about work. They are about a parent's expectations, a family's rules about success, a promise made at 20 that no longer fits at 50.
+
+By the last day, most people have put something down. Some leave with a decision. Some leave with a better question. Almost everyone leaves lighter.
+
+If you have been asking yourself that sentence, I would like to hear from you. Details of my retreats are in the comments.</div></div>
+      </div>
+    </details>
+  </div>
+  <div class="nextrow"><div class="nl">Next</div><button data-goto="production">Production</button></div>
+</div>
+
+<!-- ============ PRODUCTION ============ -->
+<div class="panel" id="production" data-g="s">
+  <p class="snum">Part nine · Social</p>
+  <h2>Production</h2>
+  <p class="intro">One shoot day a month at your home, about five hours on camera, produces almost everything.</p>
+
+  <div class="stats">
+    <div><div class="n">1</div><div class="l">shoot day a month</div></div>
+    <div><div class="n">12+</div><div class="l">reels recorded</div></div>
+    <div><div class="n">2</div><div class="l">setups, two outfits</div></div>
+    <div><div class="n">4</div><div class="l">platforms from each take</div></div>
+  </div>
+
+  <details class="sec first">
+    <summary>The shoot day schedule</summary>
+    <div class="inner wide">
+      <div class="tw"><table>
+        <thead><tr><th>Time</th><th>Block</th><th>Produces</th></tr></thead>
+        <tbody>
+          <tr><td class="num">08:30</td><td>Set up two spaces, light and sound check</td><td>None</td></tr>
+          <tr><td class="num">09:00</td><td>What you carry, setup one</td><td>4 reels</td></tr>
+          <tr><td class="num">10:15</td><td>Retreat room and Ask Janet, setup two</td><td>3 to 4 reels</td></tr>
+          <tr><td class="num">11:15</td><td>Break, stills for covers and carousels</td><td>Cover stills</td></tr>
+          <tr><td class="num">11:45</td><td>Outfit two. Book and leadership</td><td>2 reels, 1 LinkedIn video</td></tr>
+          <tr><td class="num">12:45</td><td>Card of the week ×4, card b-roll</td><td>4 stories</td></tr>
+          <tr><td class="num">13:15</td><td>Free slot and retakes</td><td>2 to 3 reels</td></tr>
+          <tr><td class="num">13:45</td><td>Wrap, agree next date</td><td>None</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Recording standards</summary>
+    <div class="inner">
+      <ul>
+        <li>Vertical 4K, subject centred so it crops cleanly to 4:5 and 1:1</li>
+        <li>Clip-on microphone, side light, nothing baked into the frame</li>
+        <li>Bullet prompts rather than scripts, so you sound like yourself</li>
+        <li>Each opening line recorded three ways to test hooks</li>
+        <li>The search phrase said clearly in the first sentence</li>
+      </ul>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>One recording, four platforms</summary>
+    <div class="inner">
+      <ul>
+        <li><strong>Instagram:</strong> the master edit, with a cover showing your face and the keyword in the caption.</li>
+        <li><strong>TikTok:</strong> a different opening, the phrase on screen, faster pace, no watermark.</li>
+        <li><strong>Facebook:</strong> posted manually by Cach, with no Instagram watermark.</li>
+        <li><strong>LinkedIn:</strong> the longer take, subtitled.</li>
+        <li><strong>Website:</strong> Cach sends Jonny explainer reels to embed, such as what a retreat is and what a constellation is.</li>
+      </ul>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>The monthly rhythm</summary>
+    <div class="inner">
+      <ul class="fixlist">
+        <li><span class="owner o-brett">Week 1</span><span>Brett sends dates and prices. Cach plans and sends you your prompts.</span></li>
+        <li><span class="owner o-cach">Week 2</span><span>Shoot day. Cach edits and schedules.</span></li>
+        <li><span class="owner o-you">Week 3</span><span>Approvals: all content in month one with a 48-hour window. LinkedIn always.</span></li>
+        <li><span class="owner o-cach">Week 4</span><span>Monthly report and adjustments.</span></li>
+        <li><span class="owner o-you">Ongoing</span><span>You send short phone clips from your week, through a shared folder or WhatsApp, for stories.</span></li>
+      </ul>
+      <div class="block read"><span class="tag"><span class="dot"></span>A note on quality</span><p>WhatsApp compresses video and photos, which makes them look soft once posted. A shared folder such as Google Drive keeps the original quality. If WhatsApp is easier, send clips as a document rather than as a video, which keeps the full file.</p></div>
+    </div>
+  </details>
+  <div class="nextrow"><div class="nl">Next</div><button data-goto="search">Search</button></div>
+</div>
+
+<!-- ============ SEARCH ============ -->
+<div class="panel" id="search" data-g="s">
+  <p class="snum">Part ten · Social</p>
+  <h2>Search</h2>
+  <p class="intro">Instagram, TikTok and Google read the same things: what you say, the text on screen and the caption's first line. One keyword set serves all of them, and your website.</p>
+  <div class="block read"><span class="tag"><span class="dot"></span>Why it matters now</span><p>Since July 2025, Google indexes public posts from professional Instagram accounts, so a good caption can appear in a Google search.</p></div>
+
+  <details class="sec first">
+    <summary>The keyword map</summary>
+    <div class="inner wide">
+      <div class="tw"><table>
+        <thead><tr><th>Offer</th><th>Main phrase</th><th>Supporting phrases</th></tr></thead>
+        <tbody>
+          <tr><td>Retreats</td><td>purpose retreat</td><td>purpose of a retreat, personal growth retreat South Africa, leadership retreat Johannesburg</td></tr>
+          <tr><td>Constellations</td><td>family constellations</td><td>what is a family constellation, family constellations Johannesburg, generational patterns</td></tr>
+          <tr><td>Workshops</td><td>personal growth workshop</td><td>self-discovery workshop Johannesburg</td></tr>
+          <tr><td>Sessions</td><td>personal growth facilitator</td><td>one on one sessions Johannesburg</td></tr>
+          <tr><td>Cards</td><td>self-reflection cards</td><td>journaling cards South Africa, reflection card deck</td></tr>
+          <tr><td>The book</td><td>Janet Goldblatt book</td><td>generational trauma book, memoir South Africa</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Where keywords go on social</summary>
+    <div class="inner"><p>Spoken in the first sentence, on screen in the first frame, in the caption's first line, in alt text, and in the Name field and bio. No hashtags: Instagram's head has said they do not improve reach, and Cach does not use them.</p></div>
+  </details>
+  <details class="sec">
+    <summary>Website and local search</summary>
+    <div class="inner">
+      <ul>
+        <li>One page per offer, with the main phrase in the title, heading and first paragraph</li>
+        <li>A short FAQ on each offer page, written the way people search</li>
+        <li>Event markup on dated retreats and groups</li>
+        <li>A Google Business Profile as a service-area business, so your home address stays hidden</li>
+        <li>An optional monthly Journal post adapted from the month's best caption</li>
+      </ul>
+    </div>
+  </details>
+  <div class="nextrow"><div class="nl">Next</div><button data-goto="community">Community and enquiries</button></div>
+</div>
+
+<!-- ============ COMMUNITY ============ -->
+<div class="panel" id="community" data-g="s">
+  <p class="snum">Part eleven · Social</p>
+  <h2>Community and enquiries</h2>
+  <p class="intro">Cach handles DMs and comments. Brett handles website enquiries. Nothing falls between them.</p>
+
+  <div class="grid2">
+    <div class="card"><div class="k">Cach</div><h4>DMs and comments</h4><p>Comments within 24 hours. DMs within one working day. Booking enquiries qualified and passed to Brett the same day.</p></div>
+    <div class="card"><div class="k">Brett</div><h4>Website and bookings</h4><p>Forms and WhatsApp within an hour where possible, always the same day. Up to three follow-ups.</p></div>
+  </div>
+  <p class="note">The speed of the first reply is the biggest single factor in whether a retreat enquiry becomes a booking.</p>
+
+  <details class="sec first">
+    <summary>The handover from DM to Brett</summary>
+    <div class="inner">
+      <ol>
+        <li>Cach replies, shares the right page and asks for name, offer, timing and contact details.</li>
+        <li>Cach logs it in the shared enquiry sheet and messages Brett on WhatsApp.</li>
+        <li>Cach tells the person Brett will be in touch today.</li>
+        <li>Brett follows up and records the outcome.</li>
+      </ol>
+      <div class="mock"><div class="mock-h"><span>Saved reply</span><button type="button" class="copy">Copy</button></div><div class="mock-b">Thank you for reaching out. Everything about the retreats is here: janetgoldblatt.co.za/retreats. If you let me know your name, a number or email and roughly when you would like to come, I will pass it to Brett, who looks after Janet's bookings, and he will be in touch today.</div></div>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Sensitive messages</summary>
+    <div class="inner"><p>When someone discloses trauma, abuse or thoughts of self-harm, Cach does not advise or counsel. Public comments move to a private message. Cach replies with care, flags it to you the same day, and shares the SADAG helpline where someone may be at risk. You decide whether to reply personally. Approved replies are agreed with you before 15 October.</p></div>
+  </details>
+  <div class="nextrow"><div class="nl">Next</div><button data-goto="website">Website strategy</button></div>
+</div>
+
+<!-- ============ WEBSITE ============ -->
+<div class="panel" id="website" data-g="w">
+  <p class="snum">Part twelve · Website</p>
+  <h2>Website strategy</h2>
+  <p class="intro">Your website is the one place you fully own, and the hub that everything on social leads to. This section sets out what it needs to look like, how people move through it, and why. It becomes Jonny's brief after sign-off.</p>
+
+  <h3>The path through the site</h3>
+  <div class="path">
+    <div class="pstep"><b>1</b><span>A post, a DM or a Google search</span></div>
+    <div class="pstep"><b>2</b><span>Start here, or straight to an offer page</span></div>
+    <div class="pstep"><b>3</b><span>The offer page answers their questions</span></div>
+    <div class="pstep"><b>4</b><span>Enquire, book, WhatsApp or buy</span></div>
+    <div class="pstep"><b>5</b><span>Brett replies the same day</span></div>
+  </div>
+  <p class="note">Every page is built to move someone one step along this path. Anything that does not help them move along it is left out.</p>
+
+  <h3>What it needs to look like, and why</h3>
+  <div class="grid2 principles">
+    <div class="card"><h4>Say who you are in five seconds</h4><p>A headline, one sentence and one button above the fold, over a still of you.</p><p class="whyline"><b>Why:</b> the current hero is a three-minute video with no words. Most visitors decide within seconds whether a page is for them.</p></div>
+    <div class="card"><h4>Lead with your face</h4><p>Your photographs and short videos throughout, not stock footage or strangers.</p><p class="whyline"><b>Why:</b> people book this kind of work from a person they trust. Your face is the same thread that runs through social.</p></div>
+    <div class="card"><h4>One page per offer</h4><p>Retreats, Constellations, Workshops, Sessions and Cards each get a full page with their own words.</p><p class="whyline"><b>Why:</b> people arrive looking for one thing. Separate pages also rank separately on Google. The current Retreats page has no words at all.</p></div>
+    <div class="card"><h4>Every page ends with a next step</h4><p>A short form, a WhatsApp button, a booking option or a list to join.</p><p class="whyline"><b>Why:</b> the Constellations page currently ends straight into the footer, so interested people have nowhere to go.</p></div>
+    <div class="card"><h4>Calm, warm and easy to read</h4><p>The new brand, generous spacing, large text, plain language.</p><p class="whyline"><b>Why:</b> most of your audience is over 45 and reading on a phone. Calm design also matches the feeling of the work.</p></div>
+    <div class="card"><h4>Built for phones first</h4><p>Designed on a phone screen first, loading in under three seconds.</p><p class="whyline"><b>Why:</b> nearly all traffic from social arrives on a phone, and slow pages lose people before they load.</p></div>
+    <div class="card"><h4>One voice throughout</h4><p>The personal growth voice on every page, with consulting on its own page.</p><p class="whyline"><b>Why:</b> the current footer tells retreat visitors they are on a leadership consultancy site.</p></div>
+    <div class="card"><h4>Measurable from day one</h4><p>GA4, a working pixel and tagged links.</p><p class="whyline"><b>Why:</b> without them we cannot count enquiries, which is the north star.</p></div>
+  </div>
+
+  <h3>The homepage, top to bottom</h3>
+  <div class="wire">
+    <div class="wb w-hero"><b>Hero</b><span>Still of you · "Understand what you carry. Live with purpose." · Find your way in</span></div>
+    <div class="wrow">
+      <div class="wb"><b>Retreats</b><span>One sentence</span></div>
+      <div class="wb"><b>Constellations</b><span>One sentence</span></div>
+      <div class="wb"><b>Workshops and sessions</b><span>One sentence</span></div>
+      <div class="wb"><b>Cards</b><span>One sentence</span></div>
+    </div>
+    <div class="wb"><b>Your story</b><span>Short paragraph and photo · link to About</span></div>
+    <div class="wb"><b>Kind words</b><span>Three short testimonials</span></div>
+    <div class="wrow">
+      <div class="wb"><b>The book</b><span>Teaser and waitlist</span></div>
+      <div class="wb"><b>Free reflection</b><span>Email sign-up</span></div>
+    </div>
+    <div class="wb w-foot"><b>Footer</b><span>New positioning line · contact · consulting link</span></div>
+  </div>
+  <div class="mock"><div class="mock-h"><span>Hero copy</span><button type="button" class="copy">Copy</button></div><div class="mock-b">Understand what you carry. Live with purpose.
+Retreats, Family Constellations and personal growth with Janet Goldblatt.
+[Find your way in]</div></div>
+
+  <h3>Two ways to book</h3>
+  <div class="grid2">
+    <div class="card"><div class="k">Route A</div><h4>On request</h4><p>How most of your work happens now. Someone approaches you and you design around them. The page ends with an enquiry form and WhatsApp.</p></div>
+    <div class="card"><div class="k">Route B</div><h4>Scheduled</h4><p>Public dates with a book-and-deposit option. When nothing is scheduled, a "join the list for the next dates" form.</p><p class="whyline"><b>Why:</b> a date gives people something to plan around and gives every post a concrete next step.</p></div>
+  </div>
+
+  <details class="sec first">
+    <summary>Sitemap</summary>
+    <div class="inner wide">
+      <div class="tw"><table>
+        <thead><tr><th>Page</th><th>Job</th><th>Call to action</th></tr></thead>
+        <tbody>
+          <tr><td>Home</td><td>Who you are, find the right offer fast</td><td>Find your way in</td></tr>
+          <tr><td>Start here</td><td>Link-in-bio page, four buttons, no menu</td><td>Choose an offer</td></tr>
+          <tr><td>Retreats</td><td>Explain, show dates, enquire or book</td><td>Enquire or book</td></tr>
+          <tr><td>Family Constellations</td><td>Explain simply, fill groups</td><td>Enquire or book</td></tr>
+          <tr><td>Workshops</td><td>New page for a live offer</td><td>Enquire</td></tr>
+          <tr><td>Private sessions</td><td>Explain one to one work</td><td>Enquire</td></tr>
+          <tr><td>In me I C</td><td>Shopify shop, made to order</td><td>Order now</td></tr>
+          <tr><td>The book</td><td>Story and waitlist</td><td>Join the waitlist</td></tr>
+          <tr><td>About Janet</td><td>Your story and credentials</td><td>Explore the work</td></tr>
+          <tr><td>Leadership and consulting</td><td>nowhere and Upside, corporate voice</td><td>Get in touch</td></tr>
+          <tr><td>Contact</td><td>Business email, number, WhatsApp, form</td><td>Send a message</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">Consulting sits last in the menu: easy to find, but not leading.</p>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Retreats and Constellations pages</summary>
+    <div class="inner">
+      <p><strong>Retreats:</strong> what it is and what people leave with, who it is for, the shape of a day, upcoming dates or join-the-list, private and team retreats on request, an embedded "what is a retreat" reel, testimonials, an FAQ and the enquiry form.</p>
+      <p><strong>Constellations:</strong> keep the existing copy and credentials, and add what happens in a group, group dates, an embedded "what is a constellation" reel, an FAQ, a note that it complements therapy, testimonials and a form.</p>
+      <p class="whyline"><b>Why:</b> these are the pages most social traffic will land on. They need to answer the questions people ask in DMs, so fewer people have to ask.</p>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Workshops, sessions, cards and the book</summary>
+    <div class="inner">
+      <ul>
+        <li><strong>Workshops and sessions:</strong> themes, format, length, in person or online, and a form. Workshops are currently promised on the site with no page.</li>
+        <li><strong>In me I C:</strong> real photos and video, "made to order" with the delivery time, and order alerts to Brett. Retreat in a Box as "coming soon" with a waitlist.</li>
+        <li><strong>The book:</strong> description, your reason for writing it, waitlist and a progress line.</li>
+        <li><strong>About, Leadership and Contact:</strong> your story, the consulting copy on its own page, and business contact details only.</li>
+      </ul>
+      <div class="mock"><div class="mock-h"><span>New footer copy</span><button type="button" class="copy">Copy</button></div><div class="mock-b">Janet Goldblatt helps people understand what they carry from their families and their past, so they can live and lead with purpose. Retreats, Family Constellations, workshops and private sessions in Johannesburg.</div></div>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Reels to embed</summary>
+    <div class="inner">
+      <p>Cach sends Jonny short explainer reels to embed on the relevant pages: what a retreat is, what a family constellation is, how you use the cards, and why you are writing the book. They are swapped for better versions as the content library grows.</p>
+      <p class="whyline"><b>Why:</b> hearing you explain the work in your own voice does more than paragraphs of text, and it keeps the website and social feeling like one place.</p>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Forms</summary>
+    <div class="inner">
+      <p>Only what Brett needs to reply: name, email, phone, offer (pre-filled), preferred timing and a message. Submissions go to Brett and the enquiry sheet.</p>
+      <p class="whyline"><b>Why:</b> every extra field loses people. Detail can be collected in the first conversation.</p>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Technical requirements <span class="sum-tag must">Required</span></summary>
+    <div class="inner">
+      <ul class="fixlist">
+        <li><span class="owner o-jonny">Jonny</span><span><strong>GA4</strong> on every page with key events: enquiry submitted, WhatsApp click, email and waitlist sign-up, booking started and completed, add to cart, purchase. Cach gets access.</span></li>
+        <li><span class="owner o-jonny">Jonny</span><span><strong>Pixel fixed now,</strong> on the current site. Remove the fake Purchase and CompleteRegistration events. Fire Lead on real forms and Purchase on real orders. Check the Google tag.</span></li>
+        <li><span class="owner o-jonny">Jonny</span><span><strong>Search Console</strong> and a sitemap.</span></li>
+        <li><span class="owner o-jonny">Jonny</span><span><strong>Mobile first,</strong> loading in under three seconds.</span></li>
+        <li><span class="owner o-cach">Cach</span><span><strong>UTM tags</strong> on every social link.</span></li>
+        <li><span class="owner o-jonny">Jonny</span><span><strong>POPIA:</strong> privacy policy, consent on forms, cookie notice.</span></li>
+        <li><span class="owner o-jonny">Jonny</span><span><strong>Embeds:</strong> email sign-up, WhatsApp, booking tool and Cach's explainer reels.</span></li>
+        <li><span class="owner o-cach">Cach</span><span><strong>Hero design and page mockups</strong> in the new brand, with all brand files.</span></li>
+      </ul>
+    </div>
+  </details>
+  <div class="nextrow"><div class="nl">Next</div><button data-goto="ops">Business operations</button></div>
+</div>
+
+<!-- ============ OPS ============ -->
+<div class="panel" id="ops" data-g="b">
+  <p class="snum">Part thirteen · Business</p>
+  <h2>Business operations</h2>
+  <p class="intro">What Brett and you need in place so interest turns into bookings, including the business plan Brett is writing.</p>
+
+  <div class="grid2">
+    <div class="card"><div class="k">Recommended by end November 2026</div><h4>Recurring constellation groups</h4><p>For example, one Saturday a month at a set venue, for January to March 2027.</p></div>
+    <div class="card"><div class="k">Recommended by end January 2027</div><h4>First public retreat</h4><p>Date set for around April to May 2027. Retreats need three to six months of lead time.</p></div>
+  </div>
+
+  <details class="sec first">
+    <summary>The business plan <span class="sum-tag">Brett</span></summary>
+    <div class="inner">
+      <p>Brett is writing your business plan. For the plan and this strategy to work together, it should cover:</p>
+      <ul>
+        <li><strong>Offer mix and pricing:</strong> prices, deposits and cancellation terms for every offer in part four.</li>
+        <li><strong>Revenue targets</strong> linked to the enquiry targets in part sixteen, with an expected conversion rate from enquiry to booking.</li>
+        <li><strong>The calendar:</strong> how many retreats, constellation groups and workshops a year, on request and scheduled.</li>
+        <li><strong>Capacity:</strong> group sizes, venues and how many events you want to run.</li>
+        <li><strong>Product:</strong> card costs, margins and courier costs, and the Retreat in a Box timeline.</li>
+        <li><strong>The book:</strong> its commercial role and publishing costs.</li>
+        <li><strong>Marketing budget:</strong> whether paid advertising is included, and at which level.</li>
+      </ul>
+      <p class="whyline"><b>Why:</b> the strategy creates demand. The business plan decides what that demand is pointed at and what it is worth. Cach will align the content calendar with it once it is ready.</p>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Why scheduled dates</summary>
+    <div class="inner"><p>No public dates exist yet, and the on-request route stays. A date gives every post a concrete next step and gives people something to plan around, so adding scheduled dates is the biggest single lever for bookings.</p></div>
+  </details>
+  <details class="sec">
+    <summary>Email and the lead magnet</summary>
+    <div class="inner">
+      <p>There is no mailing list, and retreats take weeks to decide on. Email keeps people close and is the audience you own outright.</p>
+      <ul class="fixlist">
+        <li><span class="owner o-cach">Cach</span><span>Write and design the lead magnet, working title "Seven questions about what you carry", built on In me I C.</span></li>
+        <li><span class="owner o-brett">Brett</span><span>Set up an email tool such as MailerLite or Mailchimp, load the sequence and send a monthly newsletter.</span></li>
+        <li><span class="owner o-jonny">Jonny</span><span>Embed the sign-up on home, Start here, the book page and offer pages.</span></li>
+        <li><span class="owner o-cach">Cach</span><span>Promote it with the REFLECT keyword.</span></li>
+      </ul>
+      <p><strong>Welcome sequence:</strong> day 0 the lead magnet · day 2 your story · day 5 what a constellation is · day 9 what happens at a retreat · day 14 ways to work with you.</p>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Fulfilment and admin</summary>
+    <div class="inner">
+      <ul class="fixlist">
+        <li><span class="owner o-brett">Brett</span><span>Card delivery time confirmed for the site, with dispatch tracking.</span></li>
+        <li><span class="owner o-brett">Brett</span><span>A shared enquiry sheet: date, name, source, offer, status, outcome.</span></li>
+        <li><span class="owner o-brett">Brett</span><span>A testimonial form after every event, with consent and a Google review request.</span></li>
+        <li><span class="owner o-you">You</span><span>A business number and a janetgoldblatt.co.za email.</span></li>
+        <li><span class="owner o-you">You</span><span>A Retreat in a Box timeline, so launch content can be planned.</span></li>
+      </ul>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>What Cach needs from Brett each month</summary>
+    <div class="inner">
+      <ul>
+        <li>Dates for the next three months, with prices and places</li>
+        <li>Enquiries and bookings, and where each came from</li>
+        <li>Card orders</li>
+        <li>New testimonials and consent</li>
+        <li>Anything content should support or avoid</li>
+      </ul>
+    </div>
+  </details>
+  <div class="nextrow"><div class="nl">Next</div><button data-goto="book">The book</button></div>
+</div>
+
+<!-- ============ BOOK ============ -->
+<div class="panel" id="book" data-g="b">
+  <p class="snum">Part fourteen · Business</p>
+  <h2>The book</h2>
+  <p class="intro">Your life story, with aliases for the people in it. It becomes the spine of the content: a story that develops monthly, added credibility, and a low-cost way in once published.</p>
+
+  <ul class="tl">
+    <li><div class="when">October to December 2026</div><h4>Final draft</h4><p>The Writing the book series begins. Announcement reel in November.</p></li>
+    <li><div class="when">December 2026</div><h4>Draft complete</h4><p>Milestone post everywhere. The BOOK keyword collects waitlist names until the page is live.</p></li>
+    <li class="b"><div class="when">January to March 2027, to confirm</div><h4>Copywriter and publisher</h4><p>Process content: title, edits, what changed.</p></li>
+    <li class="b"><div class="when">To confirm with your publisher</div><h4>Title and cover reveal</h4><p>A dedicated reveal across every platform.</p></li>
+    <li class="o"><div class="when">Four to six weeks before</div><h4>Pre-orders</h4><p>Excerpts, readings, early responses. An ad window if you choose one.</p></li>
+    <li class="o"><div class="when">Publication</div><h4>Launch</h4><p>A launch event, podcast guest spots, and links to retreats and cards.</p></li>
+  </ul>
+  <div class="block decide"><span class="tag"><span class="dot"></span>Needed</span><p>The copywriter and publisher timelines as soon as you have them, so the calendar can build towards a launch date.</p></div>
+  <div class="nextrow"><div class="nl">Next</div><button data-goto="ads">Paid advertising</button></div>
+</div>
+
+<!-- ============ ADS ============ -->
+<div class="panel" id="ads" data-g="b">
+  <p class="snum">Part fifteen · Business</p>
+  <h2>Paid advertising <span class="optional">Optional</span></h2>
+  <p class="intro">Advertising on Facebook and Instagram. The strategy works without it. It speeds things up around dated events, and it is your decision whether to use it at all.</p>
+
+  <div class="block decide">
+    <span class="tag"><span class="dot"></span>Before you read the numbers</span>
+    <ul style="margin:0">
+      <li>This is <strong>optional</strong>. Nothing else in the strategy depends on it.</li>
+      <li>The spend is <strong>your own cost</strong>, paid directly to Meta, which runs Facebook and Instagram.</li>
+      <li>The figures are <strong>estimates</strong>. You can spend less: a smaller budget simply means fewer people see the ads.</li>
+      <li>Campaign management sits outside the retainer, and Cach can quote for it.</li>
+    </ul>
+  </div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Level</th><th class="num">Estimated monthly spend</th><th>Covers</th><th>Rough outcome</th></tr></thead>
+    <tbody>
+      <tr><td>Starter</td><td class="num">About R3 000</td><td>Retargeting people who watched or visited, one boosted reel</td><td>15 to 40 leads</td></tr>
+      <tr><td>Growth</td><td class="num">About R6 000</td><td>Starter plus boosting to new audiences and lead ads</td><td>30 to 80 leads</td></tr>
+      <tr><td>Launch window</td><td class="num">About R10 000 to R12 000</td><td>Four to six weeks around a retreat or the book</td><td>Concentrated reach</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Based on South African costs of roughly R40 to R120 per thousand views and R40 to R250 per lead. A lead is a sign-up or enquiry, not a booking.</p>
+
+  <details class="sec first">
+    <summary>How ads would help</summary>
+    <div class="inner">
+      <ul>
+        <li><strong>Retargeting:</strong> reaching people who already watched your reels or visited your site. The best use of a small budget.</li>
+        <li><strong>Boosting proven reels</strong> to South African women aged 40 to 65.</li>
+        <li><strong>Lead ads</strong> for the lead magnet and book waitlist.</li>
+        <li><strong>Click to WhatsApp,</strong> opening a chat with Brett.</li>
+      </ul>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>Before any money is spent</summary>
+    <div class="inner">
+      <ul>
+        <li>The pixel fixed and GA4 working</li>
+        <li>Something specific to promote: a date, the lead magnet or the book</li>
+        <li>Two or three months of organic content to learn from</li>
+      </ul>
+      <p><strong>If you choose to use it:</strong> start at the starter level once constellation dates are set, and use launch windows for the first retreat and the book.</p>
+    </div>
+  </details>
+  <div class="nextrow"><div class="nl">Next</div><button data-goto="measure">Targets and measurement</button></div>
+</div>
+
+<!-- ============ MEASURE ============ -->
+<div class="panel" id="measure" data-g="r">
+  <p class="snum">Part sixteen · Running it</p>
+  <h2>Targets and measurement</h2>
+  <p class="intro">Organic projections, assuming this plan runs and the website relaunches in early 2027. Reviewed at three and six months.</p>
+
+  <div class="tw"><table>
+    <thead><tr><th>North star</th><th class="num">Now</th><th class="num">Jan 2027</th><th class="num">Apr 2027</th><th class="num">Oct 2027</th></tr></thead>
+    <tbody>
+      <tr><td>Qualified enquiries a month</td><td class="num">Not tracked</td><td class="num">4</td><td class="num">8</td><td class="num">15</td></tr>
+      <tr><td>Card orders a month</td><td class="num">Not tracked</td><td class="num">5</td><td class="num">10</td><td class="num">20</td></tr>
+      <tr><td>Email list</td><td class="num">0</td><td class="num">50</td><td class="num">200</td><td class="num">600</td></tr>
+      <tr><td>Public retreat</td><td class="num">None</td><td class="num">Date set</td><td class="num">Booking</td><td class="num">Run</td></tr>
+    </tbody>
+  </table></div>
+
+  <details class="sec first">
+    <summary>Platform targets</summary>
+    <div class="inner wide">
+      <div class="block read" style="max-width:none"><span class="tag"><span class="dot"></span>How to read these</span><p>These targets follow growth rates commonly seen as industry averages for accounts of this size. We expect to achieve well above them, but they are a sensible benchmark to measure against.</p></div>
+      <div class="tw"><table>
+        <thead><tr><th>Measure</th><th class="num">Now</th><th class="num">Jan 2027</th><th class="num">Apr 2027</th><th class="num">Oct 2027</th></tr></thead>
+        <tbody>
+          <tr><td>Instagram followers</td><td class="num">599</td><td class="num">750</td><td class="num">1 000</td><td class="num">1 800</td></tr>
+          <tr><td>TikTok followers</td><td class="num">186</td><td class="num">400</td><td class="num">900</td><td class="num">2 500</td></tr>
+          <tr><td>Facebook followers</td><td class="num">217</td><td class="num">260</td><td class="num">320</td><td class="num">450</td></tr>
+          <tr><td>LinkedIn followers</td><td class="num">2 455</td><td class="num">2 600</td><td class="num">2 800</td><td class="num">3 200</td></tr>
+          <tr><td>LinkedIn views a post</td><td class="num">300</td><td class="num">500</td><td class="num">700</td><td class="num">1 000</td></tr>
+          <tr><td>Site visits from social a month</td><td class="num">About 1</td><td class="num">60</td><td class="num">150</td><td class="num">300</td></tr>
+          <tr><td>IG shares and saves a post</td><td class="num">Under 1</td><td class="num">3</td><td class="num">6</td><td class="num">10</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">TikTok is projected fastest because it shows content to strangers by default.</p>
+    </div>
+  </details>
+  <details class="sec">
+    <summary>What matters most</summary>
+    <div class="inner"><p>If enquiries climb while followers grow slowly, it is working. If followers climb and enquiries stay flat, something between the post and the enquiry is broken, and the monthly report will show where.</p></div>
+  </details>
+  <details class="sec">
+    <summary>The monthly report</summary>
+    <div class="inner">
+      <ul>
+        <li>Enquiries, bookings and orders by source</li>
+        <li>Site visits from each platform and where they went</li>
+        <li>Growth, and views from non-followers</li>
+        <li>Shares, saves and keyword comments</li>
+        <li>Top and bottom three posts, and why</li>
+        <li>What changes next month</li>
+      </ul>
+    </div>
+  </details>
+  <div class="nextrow"><div class="nl">Next</div><button data-goto="roadmap">First 90 days</button></div>
+</div>
+
+<!-- ============ ROADMAP ============ -->
+<div class="panel" id="roadmap" data-g="r">
+  <p class="snum">Part seventeen · Running it</p>
+  <h2>First 90 days</h2>
+  <p class="intro">The retainer starts on 15 October 2026. The strategy is signed off first, even if social is briefly quiet.</p>
+
+  <details class="sec first">
+    <summary>Now to 14 October <span class="sum-tag">Sign-off and fixes</span></summary>
+    <div class="inner"><ul>
+      <li>You, Brett and Jonny review the strategy and make the decisions in part eighteen.</li>
+      <li>You update the Facebook contact details. Jonny fixes the pixel and removes your personal number.</li>
+      <li>Cach's account access confirmed.</li>
+    </ul></div>
+  </details>
+  <details class="sec">
+    <summary>15 to 31 October <span class="sum-tag">Profiles and first shoot</span></summary>
+    <div class="inner"><ul>
+      <li>Instagram, Facebook and TikTok profiles rebuilt. TikTok switched to business.</li>
+      <li>Keyword automations, saved replies and the sensitive-message protocol in place.</li>
+      <li>First shoot day. You write your first two LinkedIn posts.</li>
+      <li>Brett sets up the enquiry sheet and email tool, and starts the business plan.</li>
+      <li>Content resumes in the last week, on interim templates until the brand is signed off.</li>
+    </ul></div>
+  </details>
+  <details class="sec">
+    <summary>November <span class="sum-tag">Full cadence</span></summary>
+    <div class="inner"><ul>
+      <li>Full contracted cadence. Writing the book announced.</li>
+      <li>LinkedIn profile updated. Cach starts drafting in your voice.</li>
+      <li>Lead magnet written. Constellation group dates set.</li>
+      <li>Jonny builds from the brief and Cach's mockups. First monthly report mid-month.</li>
+    </ul></div>
+  </details>
+  <details class="sec">
+    <summary>December <span class="sum-tag">Brand rollout and the draft</span></summary>
+    <div class="inner"><ul>
+      <li>The new brand rolls out across every platform once signed off.</li>
+      <li>Seasonal content, with holiday posts scheduled ahead.</li>
+      <li>Book draft milestone. Waitlist collecting through BOOK.</li>
+      <li>Brett's business plan complete. Cach aligns the 2027 content calendar with it.</li>
+    </ul></div>
+  </details>
+  <details class="sec">
+    <summary>January 2027 <span class="sum-tag">Launch and review</span></summary>
+    <div class="inner"><ul>
+      <li>Website relaunch with GA4, Shopify, forms and sign-up live.</li>
+      <li>Welcome sequence live. First public retreat announced.</li>
+      <li>Ninety-day review against targets.</li>
+    </ul></div>
+  </details>
+  <div class="nextrow"><div class="nl">Next</div><button data-goto="decisions">Decisions needed</button></div>
+</div>
+
+<!-- ============ DECISIONS ============ -->
+<div class="panel" id="decisions" data-g="r">
+  <p class="snum">Part eighteen · Running it</p>
+  <h2>Decisions needed</h2>
+  <p class="intro">What needs an answer before the related work can go ahead.</p>
+  <ul class="fixlist">
+    <li><span class="owner o-you">You</span><span><strong>Handle:</strong> move to @janetgoldblatt or keep the catalyst handle. By 15 October.</span></li>
+    <li><span class="owner o-you">You</span><span><strong>Your story:</strong> approve the use of your father's story and the LinkedIn About copy. By 15 October.</span></li>
+    <li><span class="owner o-you">You</span><span><strong>Sensitive replies:</strong> agree the approved wording. By 15 October.</span></li>
+    <li><span class="owner o-you">You</span><span><strong>Business contact details:</strong> a number and a janetgoldblatt.co.za email. By 15 October.</span></li>
+    <li><span class="owner o-cach">Cach</span><span><strong>Lead magnet scope:</strong> quoted separately or included. By 15 October.</span></li>
+    <li><span class="owner o-brett">Brett</span><span><strong>Prices and practical details</strong> for every offer. By end October.</span></li>
+    <li><span class="owner o-you">You</span><span><strong>Workshops:</strong> themes, format and length. By end October.</span></li>
+    <li><span class="owner o-brett">Brett</span><span><strong>Card delivery time.</strong> By end October.</span></li>
+    <li><span class="owner o-brett">Brett</span><span><strong>Constellation group dates</strong> for early 2027. By end November.</span></li>
+    <li><span class="owner o-brett">Brett</span><span><strong>Business plan</strong> complete. By end December.</span></li>
+    <li><span class="owner o-brett">Brett</span><span><strong>First public retreat:</strong> date, venue, format and price. By end January 2027.</span></li>
+    <li><span class="owner o-you">You</span><span><strong>Paid advertising:</strong> whether to use it, and at which level. By the three-month review.</span></li>
+    <li><span class="owner o-you">You</span><span><strong>Online sessions:</strong> whether sessions or groups can run online. By the six-month review.</span></li>
+    <li><span class="owner o-you">You</span><span><strong>Retreat in a Box and the book:</strong> timelines, when known.</span></li>
+  </ul>
+  <div class="nextrow"><div class="nl">Back to</div><button data-goto="northstar">North star</button></div>
+</div>
+
+  </main>
+</div>
+
+<footer>
+  <div class="in">
+    <p>Cach Creative · contact@cachcreative.co.za</p>
+    <p>Strategy for Janet Goldblatt, October 2026. Builds on the platform audit of September 2026. Baselines cover the ninety days to mid-September 2026.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var panels=[].slice.call(document.querySelectorAll('.panel'));
+  var btns=[].slice.call(document.querySelectorAll('#nav button'));
+  function show(id, push){
+    var t=document.getElementById(id);
+    if(!t || !t.classList.contains('panel')) return;
+    panels.forEach(function(p){ p.classList.toggle('active', p===t); });
+    btns.forEach(function(b){ var on=b.dataset.p===id; b.classList.toggle('on', on); if(on && window.innerWidth<=940){ try{ b.scrollIntoView({inline:'center',block:'nearest'}); }catch(e){} } });
+    if(push && history.replaceState){ try{ history.replaceState(null,'','#'+id); }catch(e){} }
+    window.scrollTo(0,0);
+  }
+  btns.forEach(function(b){ b.addEventListener('click', function(){ show(b.dataset.p, true); }); });
+  document.querySelectorAll('[data-goto]').forEach(function(b){ b.addEventListener('click', function(){ show(b.dataset.goto, true); }); });
+  var start=(location.hash||'').replace('#','');
+  show(document.getElementById(start) ? start : 'northstar', false);
+
+  document.querySelectorAll('.mock').forEach(function(m){
+    var btn=m.querySelector('.copy'), body=m.querySelector('.mock-b');
+    if(!btn||!body) return;
+    btn.addEventListener('click', function(){
+      var text=body.innerText;
+      function done(){ btn.textContent='Copied'; setTimeout(function(){ btn.textContent='Copy'; },1600); }
+      function fallback(){ var r=document.createRange(); r.selectNodeContents(body); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent='Selected'; setTimeout(function(){ btn.textContent='Copy'; },1600); }
+      try{ navigator.clipboard.writeText(text).then(done, fallback); }catch(e){ fallback(); }
+    });
+  });
+})();
+</script>
+
+</body></html>
